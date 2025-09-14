@@ -100,22 +100,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Bils บิลใบเสร็จแจ้งชำระค่าโฆษณา</title>
-        <meta name="title" content="Bils บิลใบเสร็จแจ้งชำระค่าโฆษณา" />
-        <meta name="description" content="บิลใบเสร็จแจ้งชำระค่าบริการค่าโฆษณา" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://bil.myad-dev.com/" />
-        <meta property="og:title" content="Bils บิลใบเสร็จแจ้งชำระค่าโฆษณา" />
-        <meta property="og:description" content="Bils บิลใบเสร็จแจ้งชำระค่าบริการค่าโฆษณา" />
-        <meta property="og:image" content="https://bil.myad-dev.com/logo.png" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://bil.myad-dev.com/" />
-        <meta property="twitter:title" content="Bils บิลใบเสร็จแจ้งชำระค่าโฆษณา" />
-        <meta property="twitter:description" content="Bils บิลใบเสร็จแจ้งชำระค่าบริการค่าโฆษณา" />
-        <meta property="twitter:image" content="https://bil.myad-dev.com/logo.png" />
-        <link rel="shortcut icon" href="https://bil.myad-dev.com/logo.png" type="image/x-icon" />
-      </Head>
+   
 
       <div className="container mt-5">
         <div className="text-end mb-3">
@@ -276,8 +261,8 @@ export default function Home() {
           <option value="18500" />
         </datalist>
         <datalist id="ads">
-          <option value="ค่าโฆษณาที่ต้องจ่ายให้กับ Google (งบยิง) วัน x บาท" />
-          <option value="ค่าโฆษณาที่ต้องจ่ายให้กับ facebook (งบยิง) วัน x บาท" />
+          <option value="ค่าโฆษณาที่ต้องจ่ายให้กับ Google (งบยิง)  " />
+          <option value="ค่าโฆษณาที่ต้องจ่ายให้กับ facebook (งบยิง)  " />
         </datalist>
       </div>
     </>

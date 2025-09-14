@@ -18,7 +18,7 @@ export default function CustomerPage({ params: paramsPromise }) {
   const receiptRef = useRef(null);
 
   // ===== ENV =====
-  const API_BASE = process.env.NEXT_PUBLIC_API_BASE; // << ใช้ API จาก .env
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE; 
   const accountNumber = process.env.NEXT_PUBLIC_BANK_ACCOUNT;
   const bankName = process.env.NEXT_PUBLIC_BANK_NAME;
   const bankTitle = process.env.NEXT_PUBLIC_BANK_TITLE;
@@ -186,11 +186,11 @@ export default function CustomerPage({ params: paramsPromise }) {
                 {data.map((item) => (
                   <React.Fragment key={item.id}>
                     <tr>
-                      <td>{item.name}</td>
+                      <td>{item.name} {item.days}</td>
                       <td>{Number(item.price || 0).toLocaleString()} บาท</td>
                     </tr>
                     <tr>
-                      <td>{item.ads}</td>
+                      <td>{item.ads} {item.adsdays}วัน x {item.ads_price} บาท  </td>
                       <td>{Number((item.ads_price || 0) * (item.adsdays || 0)).toLocaleString()} บาท</td>
                     </tr>
                   </React.Fragment>
@@ -199,36 +199,64 @@ export default function CustomerPage({ params: paramsPromise }) {
             </table>
           </div>
 
-          <div className="receipt-total">
-            <strong>ยอดรวมทั้งหมด: {total.toLocaleString()} บาท</strong>
-          </div>
+            <div className="ttotal text-center">
+            
+            <h4>ยอดรวมทั้งหมด: {total.toLocaleString()} บาท</h4>
+          </div> 
 
           <hr />
 
-          <div className="box">
-            <div className="itemp text-center">
-              <img src={promptpayImg} alt="PromptPay" className="bank-img" />
-              {qrSrc && <img src={qrSrc} alt="QR พร้อมเพย์" className="qr-img" />}
-              <p>ยอดชำระ: {total.toLocaleString()} บาท</p>
+
+
+
+          <section className="box">
+{/* ---------------------------------------------------------------------------- */}
+              <div className="items text-center">
+
+
+              <div className="imgbankimg">
+                <img src={bankImg} alt="Bank" width='100%' className="bankimg" />
+                 </div>
+                 <ul>
+
+                 <hr />
+                  <li className='h4' >  {bankTitle}  </li>
+                  <li className='h2' >  {accountNumber}  </li>
+                  <li className='p' >  {bankName}  </li>
+                 </ul>    <hr />
+              {/* <button className="copy-btn" onClick={copyAccount}> คัดลอกเลขบัญชี </button> */}
+
+
             </div>
 
-            <div className="itemk text-center">
-              <div className="imge">
-                <img src={bankImg} alt="Bank" className="bank-img" />
-              </div>
-              <p>
-                {bankTitle}
-                <br />
-                {bankName}
-                <br />
-                {accountNumber}
-              </p>
-              <button className="copy-btn" onClick={copyAccount}>
-                คัดลอกเลขบัญชี
-              </button>
+
+
+
+{/* ---------------------------------------------------------------------------- */}
+
+            <div className="item text-center">
+             <div className="bankimg">
+              <img src={promptpayImg} alt="PromptPay" width='100%' className="bankimg" />
+               {qrSrc && <img src={qrSrc} alt="QR พร้อมเพย์" className="qrimg" />}
+                    <h5>ยอดชำระ: {total.toLocaleString()} บาท</h5>
+
+             </div>
+              
+
+             
+
+            
             </div>
-          </div>
+
+           
+          </section>
+
+{/* ---------------------------------------------------------------------------- */}
         </div>
+
+
+
+
 
         {/* ปุ่มดาวน์โหลดลอยด้านล่าง */}
         <div className="page-actions-bottom">
